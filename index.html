@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Цитати!</title>
+    <style>
+      button {
+        font-size: 25px;
+        padding: 15px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Цитати</h1>
+    <button id="author-23">Л. Толстой</button>
+    <button id="author-24">А. Міцкевич</button>
+    <button id="author-25">О. Довженко</button>
+    <button id="author-26">П. Тичина</button>
+    <button id="author-27">А. Франс</button>
+    <p id="quote"></p>
+    <script>
+      const quotes = {
+        23: 'Л. Толстой Слово є вчинок..',
+        24: 'Народна пісня-духовне обличчя нації.',
+        25: 'Українська пісня — це бездонна душа українського народу, це його слава.',
+        26: 'Я єсть народ, якого Правди сила ніким звойована ще небула.',
+        27: 'Немає магії сильнішої, ніж магія слів.',
+      };
+
+      const buttons = document.querySelectorAll('button');
+      const quote = document.querySelector('#quote');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const authorId = button.id.split('-')[1];
+          quote.textContent = quotes[authorId];
+        });
+      });
+    </script>
+  </body>
+</html>
